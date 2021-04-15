@@ -13,6 +13,7 @@
 		0D1ED1E7262722F300E45ABB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D1ED1E6262722F300E45ABB /* Preview Assets.xcassets */; };
 		0D1ED1F82627461500E45ABB /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1ED1F72627461500E45ABB /* Game.swift */; };
 		0D1ED20126274FCC00E45ABB /* BullseyeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1ED20026274FCC00E45ABB /* BullseyeTests.swift */; };
+		0D1ED20B26289DA400E45ABB /* TextViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1ED20A26289DA400E45ABB /* TextViews.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		0D1ED1FE26274FCC00E45ABB /* BullseyeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BullseyeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D1ED20026274FCC00E45ABB /* BullseyeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BullseyeTests.swift; sourceTree = "<group>"; };
 		0D1ED20226274FCC00E45ABB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D1ED20A26289DA400E45ABB /* TextViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViews.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				0D1ED1E1262722F300E45ABB /* ContentView.swift */,
+				0D1ED20A26289DA400E45ABB /* TextViews.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D1ED1E2262722F300E45ABB /* ContentView.swift in Sources */,
+				0D1ED20B26289DA400E45ABB /* TextViews.swift in Sources */,
 				0D1ED1F82627461500E45ABB /* Game.swift in Sources */,
 				0D1ED1E0262722F300E45ABB /* BullseyeApp.swift in Sources */,
 			);
