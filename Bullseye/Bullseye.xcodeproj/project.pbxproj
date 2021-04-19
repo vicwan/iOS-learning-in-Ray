@@ -14,6 +14,9 @@
 		0D1ED1F82627461500E45ABB /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1ED1F72627461500E45ABB /* Game.swift */; };
 		0D1ED20126274FCC00E45ABB /* BullseyeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1ED20026274FCC00E45ABB /* BullseyeTests.swift */; };
 		0D1ED20B26289DA400E45ABB /* TextViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D1ED20A26289DA400E45ABB /* TextViews.swift */; };
+		0DF23759262AA81B00EDE1C3 /* PointsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF23758262AA81B00EDE1C3 /* PointsView.swift */; };
+		0DF23761262B2E8900EDE1C3 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF23760262B2E8800EDE1C3 /* Constants.swift */; };
+		0DF23767262B45AA00EDE1C3 /* LeaderboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF23766262B45AA00EDE1C3 /* LeaderboardView.swift */; };
 		860B396F2629A485006713C3 /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860B396E2629A485006713C3 /* BackgroundView.swift */; };
 		862CD9F526294FF600EE20E4 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862CD9F426294FF600EE20E4 /* Shapes.swift */; };
 		862CD9F92629555600EE20E4 /* RoundedViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862CD9F82629555600EE20E4 /* RoundedViews.swift */; };
@@ -41,6 +44,9 @@
 		0D1ED20026274FCC00E45ABB /* BullseyeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BullseyeTests.swift; sourceTree = "<group>"; };
 		0D1ED20226274FCC00E45ABB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D1ED20A26289DA400E45ABB /* TextViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViews.swift; sourceTree = "<group>"; };
+		0DF23758262AA81B00EDE1C3 /* PointsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PointsView.swift; sourceTree = "<group>"; };
+		0DF23760262B2E8800EDE1C3 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0DF23766262B45AA00EDE1C3 /* LeaderboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardView.swift; sourceTree = "<group>"; };
 		860B396E2629A485006713C3 /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
 		862CD9F426294FF600EE20E4 /* Shapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
 		862CD9F82629555600EE20E4 /* RoundedViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedViews.swift; sourceTree = "<group>"; };
@@ -115,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				0D1ED1F72627461500E45ABB /* Game.swift */,
+				0DF23760262B2E8800EDE1C3 /* Constants.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -123,9 +130,11 @@
 			isa = PBXGroup;
 			children = (
 				0D1ED1E1262722F300E45ABB /* ContentView.swift */,
+				0DF23766262B45AA00EDE1C3 /* LeaderboardView.swift */,
+				0DF23758262AA81B00EDE1C3 /* PointsView.swift */,
+				860B396E2629A485006713C3 /* BackgroundView.swift */,
 				0D1ED20A26289DA400E45ABB /* TextViews.swift */,
 				862CD9F82629555600EE20E4 /* RoundedViews.swift */,
-				860B396E2629A485006713C3 /* BackgroundView.swift */,
 				862CD9F426294FF600EE20E4 /* Shapes.swift */,
 			);
 			path = Views;
@@ -239,11 +248,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DF23767262B45AA00EDE1C3 /* LeaderboardView.swift in Sources */,
 				862CD9F92629555600EE20E4 /* RoundedViews.swift in Sources */,
 				0D1ED1E2262722F300E45ABB /* ContentView.swift in Sources */,
 				0D1ED20B26289DA400E45ABB /* TextViews.swift in Sources */,
+				0DF23759262AA81B00EDE1C3 /* PointsView.swift in Sources */,
 				860B396F2629A485006713C3 /* BackgroundView.swift in Sources */,
 				862CD9F526294FF600EE20E4 /* Shapes.swift in Sources */,
+				0DF23761262B2E8900EDE1C3 /* Constants.swift in Sources */,
 				0D1ED1F82627461500E45ABB /* Game.swift in Sources */,
 				0D1ED1E0262722F300E45ABB /* BullseyeApp.swift in Sources */,
 			);

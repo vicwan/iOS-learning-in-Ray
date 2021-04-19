@@ -56,6 +56,68 @@ struct LabelText: View {
   }
 }
 
+struct BodyText: View {
+  var text: String
+  
+  var body: some View {
+    Text(text)
+      .fontWeight(.semibold)
+      .multilineTextAlignment(.center)
+      .font(.subheadline)
+      .lineSpacing(12.0)
+  }
+}
+
+struct ButtonText: View {
+  var text: String
+  
+  var body: some View {
+    Text(text)
+      .bold()
+      .frame(maxWidth: .infinity)
+      .padding()
+      .font(.headline)
+      .foregroundColor(.white)
+      .background(Color.accentColor)
+      .cornerRadius(12.0)
+  }
+}
+
+struct BigBoldText: View {
+  var text: String
+  var body: some View {
+    Text(text.uppercased())
+      .fontWeight(.black)
+      .font(.title)
+      .kerning(2.0)
+      .foregroundColor(Color("TextColor"))
+  }
+}
+
+struct ScoreText: View {
+  var score: Int
+  var body: some View {
+    Text(String(score))
+      .bold()
+      .font(.title3)
+      .kerning(-0.2)
+      .foregroundColor(Color("TextColor"))
+      .frame(width: Constants.Leaderboard.leaderboardScoreColWidth)
+  }
+}
+
+struct DateText: View {
+  var date: Date
+  var body: some View {
+    Text(date, style: .time)
+      .bold()
+      .font(.title3)
+      .kerning(-0.2)
+      .foregroundColor(Color("TextColor"))
+      .frame(width: Constants.Leaderboard.leaderboardDateColWidth)
+  }
+}
+
 struct TextViews_Previews: PreviewProvider {
   static var previews: some View {
     VStack {
@@ -66,6 +128,13 @@ struct TextViews_Previews: PreviewProvider {
         SliderLabelText(text: "100")
       }
       LabelText(title: "SCORE")
+      
+      BodyText(text: "You scored 200 Points\n🎉🎉🎉")
+      ButtonText(text: "Start New Round")
+      BigBoldText(text: "LEADERBOARD")
+      ScoreText(score: 459)
+      DateText(date: Date())
     }
+    .padding()
   }
 }

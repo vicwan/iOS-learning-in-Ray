@@ -20,9 +20,20 @@ struct ContentView: View {
       BackgroundView(game: $game)
       VStack {
         InstructionsView(game: $game)
-        SliderView(sliderValue: $sliderValue)
-        HitMeButton(alertIsVisible: $alertIsVisible, sliderValue: $sliderValue, game: $game)
+          .padding(.bottom, alertIsVisible ? 0 : 100)
+        if alertIsVisible {
+          PointsView(alertIsVisible: $alertIsVisible, sliderValue: $sliderValue, game: $game)
+            .transition(.scale)
+        } else {
+          HitMeButton(alertIsVisible: $alertIsVisible, sliderValue: $sliderValue, game: $game)
+            .transition(.scale)
+        }
       }
+      if !alertIsVisible {
+        SliderView(sliderValue: $sliderValue)
+          .transition(.scale)
+      }
+      
     }
   }
 }
@@ -60,8 +71,9 @@ struct HitMeButton: View {
   
   var body: some View {
     Button(action: {
-      print("hello, swiftUI")
-      alertIsVisible = true
+      withAnimation {
+        alertIsVisible = true
+      }
     }) {
       Text("Hit me".uppercased())
         .bold()
@@ -72,20 +84,14 @@ struct HitMeButton: View {
       ZStack {
         Color("ButtonColor")
         LinearGradient(gradient: Gradient(colors: [Color.white.opacity(0.3), Color.clear]), startPoint: .top, endPoint: .bottom)
-        
+
       })
     .foregroundColor(.white)
-    .cornerRadius(21.0)
+    .cornerRadius(Constants.General.roundRectCornerRadius)
     .overlay(
-      RoundedRectangle(cornerRadius: 21.0)
-        .stroke(Color.white, lineWidth: 2.0)
+      RoundedRectangle(cornerRadius: Constants.General.roundRectCornerRadius)
+        .stroke(Color.white, lineWidth: Constants.General.strokeWidth)
     )
-
-    
-    .alert(isPresented: $alertIsVisible, content: {
-      let roundedValue = Int(sliderValue.rounded())
-      return Alert(title: Text("Hello there!"), message: Text("The slider value is \(roundedValue).\n" + "You scored \(game.points(sliderValue: roundedValue)) points this round."), dismissButton: .default(Text("Awesome!")))
-    })
   }
 }
 
