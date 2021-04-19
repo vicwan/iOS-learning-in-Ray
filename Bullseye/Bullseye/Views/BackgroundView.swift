@@ -68,7 +68,7 @@ struct TopView: View {
       .sheet(isPresented: $leaderboardIsShowing, onDismiss: {
         print("View dismissed!")
       }, content: {
-        LeaderboardView(leaderboardIsShowing: $leaderboardIsShowing)
+        LeaderboardView(leaderboardIsShowing: $leaderboardIsShowing, game: $game)
       })
     }
   }

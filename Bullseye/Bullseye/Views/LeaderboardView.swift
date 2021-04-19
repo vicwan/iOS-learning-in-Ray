@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LeaderboardView: View {
   @Binding var leaderboardIsShowing: Bool
+  @Binding var game: Game
   
   var body: some View {
     ZStack {
@@ -17,7 +18,14 @@ struct LeaderboardView: View {
       VStack {
         HeaderView(leaderboardIsShowing: $leaderboardIsShowing)
         LabelView()
-        RowView(index: 1, score: 10, date: Date())
+        ScrollView {
+          VStack(spacing: 10.0) {
+            ForEach(game.leaderboardEntries.indices) { i in
+              let leaderboardEntry = game.leaderboardEntries[i]
+              RowView(index: i + 1, score: leaderboardEntry.score, date: leaderboardEntry.date)
+            }
+          }
+        }
       }
     }
   }
@@ -32,7 +40,6 @@ struct HeaderView: View {
     
     ZStack {
       HStack {
-        
         if horizontalSizeClass == .compact && verticalSizeClass == .regular {
           BigBoldText(text: "leaderboard")
             .padding(.leading)
@@ -50,6 +57,7 @@ struct HeaderView: View {
           RoundedImageViewFilled(systemName: "xmark")
             .padding(.trailing)
         })
+        .padding(.top)
       }
     }
   }
@@ -80,9 +88,9 @@ struct RowView: View {
   
   var body: some View {
     HStack {
-      RoundedTextView(text: "1")
+      RoundedTextView(text: String(index))
       Spacer()
-      ScoreText(score: 999)
+      ScoreText(score: score)
       Spacer()
       DateText(date: date)
       
@@ -99,11 +107,12 @@ struct RowView: View {
 
 struct LeaderboardView_Previews: PreviewProvider {
   static private var leaderboardIsShowing = Binding.constant(false)
+  static private var game = Binding.constant(Game(loadTestData: true))
   static var previews: some View {
-    LeaderboardView(leaderboardIsShowing: leaderboardIsShowing)
-    LeaderboardView(leaderboardIsShowing: leaderboardIsShowing).previewLayout(.fixed(width: 568, height: 320))
+    LeaderboardView(leaderboardIsShowing: leaderboardIsShowing, game: game)
+    LeaderboardView(leaderboardIsShowing: leaderboardIsShowing, game: game).previewLayout(.fixed(width: 568, height: 320))
     
-    LeaderboardView(leaderboardIsShowing: leaderboardIsShowing).preferredColorScheme(.dark)
-    LeaderboardView(leaderboardIsShowing: leaderboardIsShowing).previewLayout(.fixed(width: 568, height: 320)).preferredColorScheme(.dark)
+    LeaderboardView(leaderboardIsShowing: leaderboardIsShowing, game: game).preferredColorScheme(.dark)
+    LeaderboardView(leaderboardIsShowing: leaderboardIsShowing, game: game).previewLayout(.fixed(width: 568, height: 320)).preferredColorScheme(.dark)
   }
 }
