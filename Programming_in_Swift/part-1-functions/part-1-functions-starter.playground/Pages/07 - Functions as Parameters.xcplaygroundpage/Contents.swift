@@ -2,16 +2,25 @@
 //: ## Episode 07 - Functions as Parameters
 
 //: Functions are data types, and can be assigned to variables and constants just like `Int` and `String`.
+typealias TakeTwoIntsAndReturnOneInt = (Int, Int) -> Int
 
+func add(number1: Int, number2: Int) -> Int {
+    number1 + number2
+}
 
+func substract(number1: Int, number2: Int) -> Int {
+    number1 - number2
+}
 
+func printResult(_ operate: TakeTwoIntsAndReturnOneInt, _ a: Int, _ b: Int) {
+    let ret = operate(a, b)
+    print("The result is: \(ret)")
+}
 
+printResult(+, 2, 9)
+//let a: Int = + (2, 9)
 
 //: Functions can use functions as parameter and return types. Functions that do this are called  "higher-order functions"
-
-
-
-
 
 
 //: A `typealias` lets you give a name to a compound type, or give *another* name to a named type.

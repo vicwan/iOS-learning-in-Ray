@@ -9,7 +9,9 @@ let ozmaAllGrades = [60, 96, 87, 42]
 // --------------------------------------
 
 //: ### Variadic Parameters
-
+func getHighestGrades(for grades: Int...) -> Int {
+    return 0
+}
 
 
 //: ### Inout Parameters
