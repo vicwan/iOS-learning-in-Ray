@@ -61,6 +61,7 @@ struct RoundedTextView: View {
   var text: String
   
   var body: some View {
+    Group
     Text(text)
       .fontWeight(.semibold)
       .font(.title3)
@@ -76,12 +77,23 @@ struct RoundedTextView: View {
 
 struct Preview: View {
   var body: some View {
-    VStack(spacing: 10.0) {
-      RoundedImageViewStroked(systemName: "arrow.counterclockwise")
-      RoundedImageViewStroked(systemName: "list.dash")
+    VStack(alignment: .leading, spacing: 10.0) {
       
-      RoundedImageViewFilled(systemName: "arrow.counterclockwise")
-      RoundedImageViewFilled(systemName: "list.dash")
+      RoundedImageViewStroked(systemName: "arrow.counterclockwise")
+      
+      HStack(alignment: .bottom) {
+        RoundedImageViewStroked(systemName: "list.dash")
+      }
+      
+      
+      
+      
+      
+      
+      HStack {
+        RoundedImageViewFilled(systemName: "arrow.counterclockwise")
+        RoundedImageViewFilled(systemName: "list.dash")
+      }
       
       RoundRectTextView(text: "111")
       RoundedTextView(text: "1")
