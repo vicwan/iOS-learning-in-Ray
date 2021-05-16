@@ -11,6 +11,11 @@
 		0D277D9926504CED00330A1B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D277D9826504CED00330A1B /* ContentView.swift */; };
 		0D277D9B26504CEE00330A1B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D277D9A26504CEE00330A1B /* Assets.xcassets */; };
 		0D277D9E26504CEE00330A1B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D277D9D26504CEE00330A1B /* Preview Assets.xcassets */; };
+		86040369265105ED002BC888 /* PHPickerViewController.View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86040368265105ED002BC888 /* PHPickerViewController.View.swift */; };
+		8650EF492650E55900585553 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8650EF482650E55900585553 /* Book.swift */; };
+		8650EF4C2650E5E600585553 /* BookViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8650EF4B2650E5E600585553 /* BookViews.swift */; };
+		8682EAEB2650F5FA00959E06 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8682EAEA2650F5FA00959E06 /* Library.swift */; };
+		8682EAED2650FA7400959E06 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8682EAEC2650FA7400959E06 /* DetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +25,11 @@
 		0D277D9A26504CEE00330A1B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D277D9D26504CEE00330A1B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0D277D9F26504CEE00330A1B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		86040368265105ED002BC888 /* PHPickerViewController.View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHPickerViewController.View.swift; sourceTree = "<group>"; };
+		8650EF482650E55900585553 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		8650EF4B2650E5E600585553 /* BookViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViews.swift; sourceTree = "<group>"; };
+		8682EAEA2650F5FA00959E06 /* Library.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
+		8682EAEC2650FA7400959E06 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +63,9 @@
 			isa = PBXGroup;
 			children = (
 				0D277D9626504CED00330A1B /* ReadMeApp.swift */,
-				0D277D9826504CED00330A1B /* ContentView.swift */,
+				8650EF4A2650E5D100585553 /* Views */,
+				8650EF482650E55900585553 /* Book.swift */,
+				8682EAEA2650F5FA00959E06 /* Library.swift */,
 				0D277D9A26504CEE00330A1B /* Assets.xcassets */,
 				0D277D9F26504CEE00330A1B /* Info.plist */,
 				0D277D9C26504CEE00330A1B /* Preview Content */,
@@ -67,6 +79,17 @@
 				0D277D9D26504CEE00330A1B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8650EF4A2650E5D100585553 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				86040368265105ED002BC888 /* PHPickerViewController.View.swift */,
+				0D277D9826504CED00330A1B /* ContentView.swift */,
+				8682EAEC2650FA7400959E06 /* DetailView.swift */,
+				8650EF4B2650E5E600585553 /* BookViews.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,7 +162,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D277D9926504CED00330A1B /* ContentView.swift in Sources */,
+				8682EAED2650FA7400959E06 /* DetailView.swift in Sources */,
 				0D277D9726504CED00330A1B /* ReadMeApp.swift in Sources */,
+				8682EAEB2650F5FA00959E06 /* Library.swift in Sources */,
+				86040369265105ED002BC888 /* PHPickerViewController.View.swift in Sources */,
+				8650EF492650E55900585553 /* Book.swift in Sources */,
+				8650EF4C2650E5E600585553 /* BookViews.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,7 +225,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -252,7 +280,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
