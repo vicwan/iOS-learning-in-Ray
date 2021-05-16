@@ -26,13 +26,21 @@
 /// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 /// THE SOFTWARE.
 
+import Combine
 import class UIKit.UIImage
 
-struct Library {
+class Library: ObservableObject {
   var sortedBooks: [Book] { booksCache }
+  
+  
+  /// Adds a new book at the start of the library's manually-sorted books
+  func addNewBook(_ book: Book, image: UIImage?) {
+    booksCache.insert(book, at: 0)
+    uiImages[book] = image
+  }
 
   /// An in-memory cache of the manually-sorted books that are persistently stored.
-  private var booksCache: [Book] = [
+  @Published private var booksCache: [Book] = [
     .init(title: "Ein Neues Land", author: "Shaun Tan"),
     .init(
       title: "Bosch",
@@ -54,5 +62,5 @@ struct Library {
     .init(title: "What to Say When You Talk to Yourself", author: "Shad Helmstetter")
   ]
   
-  var uiImages: [Book: UIImage] = [:]
+  @Published var uiImages: [Book: UIImage] = [:]
 }

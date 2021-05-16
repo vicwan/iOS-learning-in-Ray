@@ -53,7 +53,7 @@ extension Book {
           .cornerRadius(cornerRadius)
       } else {
         let symbol = SwiftUI.Image(title: title)
-          ?? .init(systemName:  "book")
+          ?? .init(systemName: "book")
         
         symbol
           .resizable()
