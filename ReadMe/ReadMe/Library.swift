@@ -28,6 +28,7 @@
 
 import Combine
 import class UIKit.UIImage
+import Foundation
 
 enum Section: CaseIterable {
   case readMe
@@ -35,12 +36,27 @@ enum Section: CaseIterable {
 }
 
 final class Library: ObservableObject {
-  var sortedBooks: [Book] { booksCache }
+  var sortedBooks: [Book] {
+    get { booksCache }
+    set {
+      booksCache.removeAll { book in
+        !newValue.contains(book)
+      }
+    }
+  }
   
   var manuallySortedBooks: [Section: [Book]] {
-    /// 通过 Book 的 readMe 字段对 booksCache 里面的对象进行分组, 并映射, 最后返回该字典
-    Dictionary(grouping: booksCache, by: \.readMe)
-      .mapKeys(Section.init)
+    get {
+      /// 通过 Book 的 readMe 字段对 booksCache 里面的对象进行分组, 并映射, 最后返回该字典
+      Dictionary(grouping: booksCache, by: \.readMe)
+        .mapKeys(Section.init)
+    }
+    set {
+      booksCache =
+        newValue
+        .sorted { $1.key == .finished }
+        .flatMap { $0.value }
+    }
   }
   
   
@@ -49,6 +65,29 @@ final class Library: ObservableObject {
     booksCache.insert(book, at: 0)
     uiImages[book] = image
     storeCancellable(for: book)
+  }
+  
+  func deleteBooks(atOffsets offsets: IndexSet, section: Section?) {
+    let booksBeforeDeletion = booksCache
+    
+    if let section = section {
+      manuallySortedBooks[section]?.remove(atOffsets: offsets)
+    } else {
+      sortedBooks.remove(atOffsets: offsets)
+    }
+    
+    for change in booksCache.difference(from: booksBeforeDeletion) {
+      if case .remove(_, let deletedBook, _) = change {
+        uiImages[deletedBook] = nil
+      }
+    }
+  }
+  
+  func moveBooks(
+    oldOffsets: IndexSet, newOffset: Int,
+    section: Section
+  ) {
+    manuallySortedBooks[section]?.move(fromOffsets: oldOffsets, toOffset: newOffset)
   }
   
   @Published var uiImages: [Book: UIImage] = [:]
